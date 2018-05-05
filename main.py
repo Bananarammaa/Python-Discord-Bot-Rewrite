@@ -7,7 +7,7 @@ from discord.ext import commands
 from Pickup_Lines import pickups
 from Sensitive_Info import TOKEN
 
-PREFIX = "&"
+PREFIX = "^"
 client = commands.Bot(description="Basic Bot by Joe", command_prefix=PREFIX, pm_help=False, case_insensitive = True)
 session = aiohttp.ClientSession()# Do this once, at startup or right before the first command
 
@@ -39,7 +39,7 @@ async def pickUp(ctx):
 async def tell(ctx, user : discord.Member):
     """A fun gift to give to someone"""
     for x in range(15):
-        await ctx.author.send("Hello")
+        await user.send("Hello")
 
 @client.command()
 async def req(ctx, teamNum : str):
